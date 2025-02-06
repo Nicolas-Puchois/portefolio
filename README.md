@@ -4,13 +4,9 @@
 
 [Le portefolio]()
 
----
-
 ## Le projet :
 
 réaliser un portefolio en HTML/CSS
-
----
 
 ## Réaliser avec :
 
