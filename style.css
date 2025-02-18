@@ -1,3 +1,8 @@
+/*  style global */
+html {
+  scroll-behavior: smooth;
+}
+
 ul {
   & li {
     list-style-type: none;
@@ -9,4 +14,99 @@ ul {
 
 img {
   max-width: 100%;
+}
+
+body {
+  background-color: #f0ebd8;
+}
+
+/* style header */
+header {
+  background-color: #7e7f9a;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  padding: 8px;
+  & #banniere {
+    display: none;
+    text-align: center;
+  }
+  & .flex {
+    display: flex;
+  }
+  & #logo > img {
+    height: 60px;
+  }
+  & nav {
+    flex-grow: 1;
+    & ul {
+      gap: 3%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      & li {
+        & a {
+          color: black;
+        }
+        & a:hover {
+          color: white;
+          text-decoration: overline;
+        }
+      }
+    }
+  }
+}
+
+/* style du main */
+main {
+  & section {
+    & div.titre {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  /* style de la section hero */
+  & section#hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./res/bg-hero.webp") no-repeat center center/cover;
+    & #hero-content {
+      width: 50%;
+      & h1 {
+        color: white;
+      }
+      & p {
+        color: white;
+        padding: 8px;
+      }
+    }
+  }
+  & section#a-propos {
+    min-height: 80vh;
+    & div#a-propos-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    & p#a-propos-paragraph {
+      width: 50%;
+    }
+  }
+  & section#competence {
+    height: 500px;
+  }
+  & section#projet {
+    & div#intro {
+      background-color: grey;
+      padding: 8px 8px;
+    }
+    height: 600px;
+  }
+  & section#contact {
+    height: 200px;
+  }
 }
