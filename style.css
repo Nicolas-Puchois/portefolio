@@ -10,3 +10,62 @@ ul {
 img {
   max-width: 100%;
 }
+
+body {
+  background-color: #f0ebd8;
+}
+
+/* style header */
+header {
+  background-color: #7e7f9a;
+  & #banniere {
+    display: none;
+    text-align: center;
+  }
+  & .flex {
+    display: flex;
+  }
+  & #logo > img {
+    height: 60px;
+  }
+  & nav {
+    flex-grow: 1;
+    & ul {
+      gap: 3%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      & li {
+        & a {
+          color: black;
+        }
+        & a:hover {
+          color: white;
+          text-decoration: overline;
+        }
+      }
+    }
+  }
+}
+
+/* style du main */
+main {
+  /* style de la section hero */
+  & section#hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./bg-hero.webp") no-repeat center center/cover;
+    & #hero-content {
+      width: 50%;
+    }
+    & h1 {
+      color: white;
+    }
+    & p {
+      color: white;
+    }
+  }
+}
