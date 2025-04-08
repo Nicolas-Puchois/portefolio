@@ -5,8 +5,8 @@
       <!-- INFO: présentation-->
       <section>
         <h1>Nicolas Puchois : Développeur frontend/backend</h1>
-        <div id="presentation">
-          <img src="<%= process.env.SITE_URL %>/assets/images/nicolas-photo.jpg" alt="photo de nicolas souriant portant un polo bleu" />
+        <div id="a-propos">
+          <img src="<%= process.env.SITE_URL %>/images/nicolas-photo.jpg" alt="photo de nicolas souriant portant un polo bleu" />
           <p>
             Salut, moi c'est Nicolas. Bienvenue sur mon site.
           </p>
@@ -61,7 +61,7 @@
               <h3>projet Portefolio</h3>
               <p> Création d'un Portefolio</p>
             </div>
-            <div id="media"><img src="<%= process.env.SITE_URL %>/assets/images/photo-card-portefolio.jpg" alt="photo du site dans l'état fini">
+            <div id="media"><img src="<%= process.env.SITE_URL %>/images/photo-card-portefolio.jpg" alt="photo du site dans l'état fini">
               <div id="liens">
                 <a href="" class="lien-card">Liens vers le github du projet</a>
                 <a href="" class="lien-card">Liens vers le site du projet</a>
@@ -74,7 +74,7 @@
               <h3>projet Portefolio</h3>
               <p> Création d'un Portefolio</p>
             </div>
-            <div id="media"><img src="<%= process.env.SITE_URL %>/assets/images/photo-card-portefolio.jpg" alt="photo du site dans l'état fini">
+            <div id="media"><img src="<%= process.env.SITE_URL %>/images/photo-card-portefolio.jpg" alt="photo du site dans l'état fini">
               <div id="liens">
                 <a href="" class="lien-card">Liens vers le github du projet</a>
                 <a href="" class="lien-card">Liens vers le site du projet</a>
@@ -88,7 +88,7 @@
         </div>
       </section>
       <!-- INFO: formulaire de contact-->
-      <section>
+      <section id="contact">
         <h2>Me contacter</h2>
         <div class="form-contact">
           <form>
@@ -100,7 +100,6 @@
               </div>
               <span class="error" id="error-name"></span>
             </div>
-
             <div class="form-group">
               <label for="email"> Email : </label>
               <div class="input-wrapper">
