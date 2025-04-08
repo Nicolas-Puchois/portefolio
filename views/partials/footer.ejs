@@ -1,12 +1,26 @@
 <i class="fas fa-arrow-up" id="up-arrow"></i>
-</body>
+<div id="reseaux">
+
+
+  <div>
+    <a href="" target="_blank"></a><i id="linkedin" class="fab fa-linkedin"></i></a>
+  </div>
+
+  <div>
+    <a href="" target="_blank"></a><i id="github" class="fab fa-github"></i></a>
+  </div>
+
+</div>
+
 <footer>
-    &copy; <span class="year"></span> by Nicolas <a href="<%= process.env.SITE_URL %>">PorteFolio</a>
-    <script>
-      const footerYear = document.querySelectorAll(".year");
-      footerYear.forEach(copyright => {
-        copyright.textContent = new Date().getFullYear();
-      });
-    </script>
-  </footer>
+  &copy; <span class="year"></span> by Nicolas</a>
+  <script>
+    const footerYear = document.querySelectorAll(".year");
+    footerYear.forEach(copyright => {
+      copyright.textContent = new Date().getFullYear();
+    });
+  </script>
+</footer>
+</body>
+
 </html>

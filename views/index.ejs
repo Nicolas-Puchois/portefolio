@@ -1,3 +1,135 @@
-<%- include('partials/header', {title:'accueil'})%>
-<main>hellowolrd</main>
-<%- include('partials/footer')%>
+    <!-- INFO: import du header-->
+    <%- include('partials/header', {title:'accueil'})%>
+    <!-- INFO: page principale-->
+    <main>
+      <!-- INFO: présentation-->
+      <section>
+        <h1>Nicolas Puchois : Développeur frontend/backend</h1>
+        <div id="presentation">
+          <img src="<%= process.env.SITE_URL %>/assets/images/nicolas-photo.jpg" alt="photo de nicolas souriant portant un polo bleu" />
+          <p>
+            Salut, moi c'est Nicolas. Bienvenue sur mon site.
+          </p>
+        </div>
+      </section>
+      <!-- INFO: compétences-->
+      <section id="competence">
+        <div id="titre">
+          <h2> Mes compétences</h2>
+        </div>
+        <div class="comp">
+          <h3>frontend</h3>
+          <ul>
+            <li><i class="fab fa-html5"></i>HTML5</li>
+            <li><i class="fab fa-css3"></i>CSS3</li>
+            <li><i class="fab fa-js-square"></i>JavaScript</li>
+            <li><i class="fas fa-t fas fa-s"></i>TypeScript</li>
+            <li><i class="fab fa-angular"></i>Angular</li>
+            <li><i class=""></i>TailwindCSS</li>
+            <li><i class=""></i>ExpressJS</li>
+            <li><i class="fab fa-sass"></i>SASS</li>
+        </div>
+        <div class="comp">
+          <h3>Backend</h3>
+          <ul>
+            <li><i class="fab fa-php"></i>PHP</li>
+            <li><i class="fas fa-c fas fa-hashtag"></i>C#</li>
+            <li><i class="fas fa-c fas fa-plus fas fa-plus"></i>C++</li>
+            <li><i class="fas fa-circle "></i>dotNET</li>
+            <li><i class="fab fa-symfony"></i>Symfony</li>
+        </div>
+        <div class="comp">
+          <h3>Logiciel</h3>
+          <ul>
+            <li><i class="fab fa-git-alt"></i>Git</li>
+            <li><i class="fab fa-github"></i>GitHub</li>
+            <li><i class=""></i>Visual Studio Code</li>
+            <li><i class="fab fa-figma"></i>Figma</li>
+            <li><i class="fab fa-docker"></i>Docker</li>
+            <li><i class=""></i>Visual Studio</li>
+        </div>
+      </section>
+      <section id="projets">
+        <div class="titre">
+          <h2>Mes projets</h2>
+        </div>
+        <!-- INFO: container des cartes-->
+        <div id="card-container">
+          <!-- INFO: carte 1 -->
+          <div class="card">
+            <div id="text">
+              <h3>projet Portefolio</h3>
+              <p> Création d'un Portefolio</p>
+            </div>
+            <div id="media"><img src="<%= process.env.SITE_URL %>/assets/images/photo-card-portefolio.jpg" alt="photo du site dans l'état fini">
+              <div id="liens">
+                <a href="" class="lien-card">Liens vers le github du projet</a>
+                <a href="" class="lien-card">Liens vers le site du projet</a>
+              </div>
+            </div>
+          </div>
+          <!-- INFO: carte 2 -->
+          <div class="card">
+            <div id="text">
+              <h3>projet Portefolio</h3>
+              <p> Création d'un Portefolio</p>
+            </div>
+            <div id="media"><img src="<%= process.env.SITE_URL %>/assets/images/photo-card-portefolio.jpg" alt="photo du site dans l'état fini">
+              <div id="liens">
+                <a href="" class="lien-card">Liens vers le github du projet</a>
+                <a href="" class="lien-card">Liens vers le site du projet</a>
+              </div>
+            </div>
+          </div>
+          <div id="carrousel-control">
+            <button id="prev">&#10094;</button>
+            <button id="next">&#10095;</button>
+          </div>
+        </div>
+      </section>
+      <!-- INFO: formulaire de contact-->
+      <section>
+        <h2>Me contacter</h2>
+        <div class="form-contact">
+          <form>
+            <div class="form-group">
+              <label for="name"> Nom : </label>
+              <div class="input-wrapper">
+                <input type="text" id="name" name="name" />
+                <i class="validation-icon"></i>
+              </div>
+              <span class="error" id="error-name"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email"> Email : </label>
+              <div class="input-wrapper">
+                <input type="email" id="email" name="email" />
+                <i class="validation-icon"></i>
+              </div>
+              <span class="error" id="error-email"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="subject"> Sujet : </label>
+              <div class="input-wrapper">
+                <input type="text" id="subject" name="subject" />
+                <i class="validation-icon"></i>
+              </div>
+              <span class="error" id="error-subject"></span>
+            </div>
+            <div class="form-group">
+              <label for="message"> Message : </label>
+              <div class="input-wrapper">
+                <textarea id="message" name="message"></textarea>
+                <i class="validation-icon"></i>
+              </div>
+              <span class="error" id="error-message"></span>
+            </div>
+            <button type="submit" class="submit">Envoyer</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!-- INFO: import du footer-->
+    <%- include('partials/footer')%>
