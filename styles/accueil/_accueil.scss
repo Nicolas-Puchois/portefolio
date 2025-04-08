@@ -1,0 +1,192 @@
+html {
+  & body {
+    & main {
+      & .titre {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+      }
+      & #a-propos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & #img-pres {
+          margin: 8px 0;
+          display: flex;
+          justify-content: space-evenly;
+          & img {
+            width: 10%;
+          }
+        }
+      }
+      & #competence {
+        & ul {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          & li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      }
+      & #projets {
+        & #card-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 16px; // Espace entre les cartes
+          justify-content: center;
+          align-items: center;
+          .card {
+            display: grid;
+            grid-template-areas:
+              "projet-name projet-name"
+              "projet-desc projet-desc"
+              "projet-img projet-link"; // Sépare l'image et les liens
+            grid-template-columns: 1fr 1fr; // Deux colonnes
+            grid-template-rows: auto auto auto; // Trois lignes
+            gap: 8px;
+            padding: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            background-color: #fff;
+
+            .text {
+              h3 {
+                grid-area: projet-name;
+                font-size: 1.5rem;
+                margin: 0;
+              }
+              p {
+                grid-area: projet-desc;
+                font-size: 1rem;
+                color: #666;
+              }
+            }
+
+            .media {
+              grid-area: projet-img; // Associe uniquement l'image à la zone projet-img
+              display: flex;
+              align-items: center;
+
+              img {
+                width: 100%;
+                max-width: 150px;
+                height: auto;
+                object-fit: cover;
+                border-radius: 4px;
+              }
+            }
+
+            .liens {
+              grid-area: projet-link; // Associe les liens à la zone projet-link
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+
+              a {
+                text-decoration: none;
+                color: #0077df;
+                font-size: 0.9rem;
+                transition: color 0.3s;
+
+                &:hover {
+                  color: #005bb5;
+                }
+              }
+            }
+          }
+        }
+      }
+      & #contact {
+        .form-contact {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    & body {
+      & main {
+        & .titre {
+          display: flex;
+          width: 100%;
+          justify-content: center;
+        }
+        & #a-propos {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          & div {
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-evenly;
+            & img {
+              display: none;
+            }
+          }
+        }
+        & #competence {
+          & ul {
+            display: block;
+            // flex-direction: row;
+            // justify-content: space-evenly;
+            column-count: 2;
+            & li {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+          }
+        }
+      }
+      #projets {
+        #card-container {
+          .card {
+            grid-template-areas:
+              "projet-name"
+              "projet-desc"
+              "projet-link";
+            grid-template-columns: 1fr;
+            text-align: center;
+
+            .media {
+              img {
+                display: none;
+              }
+              .liens {
+                justify-content: center;
+              }
+            }
+          }
+        }
+      }
+      .card {
+        grid-template-areas:
+          "projet-name"
+          "projet-desc"
+          "projet-link"; // Supprime la zone de l'image
+        grid-template-columns: 1fr; // Une seule colonne
+        text-align: center;
+
+        .media {
+          img {
+            display: none; // Cache l'image
+          }
+        }
+
+        .liens {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

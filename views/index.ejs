@@ -3,22 +3,30 @@
     <!-- INFO: page principale-->
     <main>
       <!-- INFO: présentation-->
-      <section>
+      <div class="titre">
         <h1>Nicolas Puchois : Développeur frontend/backend</h1>
-        <div id="a-propos">
+      </div>
+      <section id="a-propos">
+        <div id="img-pres">
           <img src="<%= process.env.SITE_URL %>/images/nicolas-photo.jpg" alt="photo de nicolas souriant portant un polo bleu" />
-          <p>
-            Salut, moi c'est Nicolas. Bienvenue sur mon site.
-          </p>
+          <div id="content-pres">
+            <p>
+              Salut, moi c'est Nicolas. Bienvenue sur mon site.
+            </p>
+          </div>
+
         </div>
       </section>
       <!-- INFO: compétences-->
       <section id="competence">
-        <div id="titre">
+        <div class="titre">
           <h2> Mes compétences</h2>
         </div>
         <div class="comp">
-          <h3>frontend</h3>
+          <div class="titre">
+            <h3>frontend</h3>
+          </div>
+
           <ul>
             <li><i class="fab fa-html5"></i>HTML5</li>
             <li><i class="fab fa-css3"></i>CSS3</li>
@@ -30,16 +38,20 @@
             <li><i class="fab fa-sass"></i>SASS</li>
         </div>
         <div class="comp">
-          <h3>Backend</h3>
+          <div class="titre">
+            <h3>Backend</h3>
+          </div>
           <ul>
             <li><i class="fab fa-php"></i>PHP</li>
-            <li><i class="fas fa-c fas fa-hashtag"></i>C#</li>
-            <li><i class="fas fa-c fas fa-plus fas fa-plus"></i>C++</li>
+            <li><i class="fas fa-c "></i>C#</li>
+            <li><i class="fas fa-c "></i>C++</li>
             <li><i class="fas fa-circle "></i>dotNET</li>
             <li><i class="fab fa-symfony"></i>Symfony</li>
         </div>
         <div class="comp">
-          <h3>Logiciel</h3>
+          <div class="titre">
+            <h3>Logiciel</h3>
+          </div>
           <ul>
             <li><i class="fab fa-git-alt"></i>Git</li>
             <li><i class="fab fa-github"></i>GitHub</li>
@@ -57,28 +69,30 @@
         <div id="card-container">
           <!-- INFO: carte 1 -->
           <div class="card">
-            <div id="text">
+            <div class="text">
               <h3>projet Portefolio</h3>
               <p> Création d'un Portefolio</p>
             </div>
-            <div id="media"><img src="<%= process.env.SITE_URL %>/images/photo-card-portefolio.jpg" alt="photo du site dans l'état fini">
-              <div id="liens">
-                <a href="" class="lien-card">Liens vers le github du projet</a>
-                <a href="" class="lien-card">Liens vers le site du projet</a>
-              </div>
+            <div class="media">
+              <img src="<%= process.env.SITE_URL %>/images/photo-card-portefolio.jpg" alt="photo du site dans l'état fini" />
+
+            </div>
+            <div class="liens">
+              <a href="https://" target="_blank">Github du projet</a>
+              <a href=" https://" target="_blank">Site du projet</a>
             </div>
           </div>
           <!-- INFO: carte 2 -->
           <div class="card">
-            <div id="text">
+            <div class="text">
               <h3>projet Portefolio</h3>
               <p> Création d'un Portefolio</p>
             </div>
-            <div id="media"><img src="<%= process.env.SITE_URL %>/images/photo-card-portefolio.jpg" alt="photo du site dans l'état fini">
-              <div id="liens">
-                <a href="" class="lien-card">Liens vers le github du projet</a>
-                <a href="" class="lien-card">Liens vers le site du projet</a>
-              </div>
+            <div class="media"><img src="<%= process.env.SITE_URL %>/images/photo-card-portefolio.jpg" alt="photo du site dans l'état fini">
+            </div>
+            <div class="liens">
+              <a href="" class="lien-card">Liens vers le github du projet</a>
+              <a href="" class="lien-card">Liens vers le site du projet</a>
             </div>
           </div>
           <div id="carrousel-control">
@@ -89,7 +103,10 @@
       </section>
       <!-- INFO: formulaire de contact-->
       <section id="contact">
-        <h2>Me contacter</h2>
+        <div class="titre">
+          <h2>Me contacter</h2>
+        </div>
+
         <div class="form-contact">
           <form>
             <div class="form-group">
