@@ -1,0 +1,12 @@
+<i class="fas fa-arrow-up" id="up-arrow"></i>
+</body>
+<footer>
+    &copy; <span class="year"></span> by Nicolas <a href="<%= process.env.SITE_URL %>">PorteFolio</a>
+    <script>
+      const footerYear = document.querySelectorAll(".year");
+      footerYear.forEach(copyright => {
+        copyright.textContent = new Date().getFullYear();
+      });
+    </script>
+  </footer>
+</html>
