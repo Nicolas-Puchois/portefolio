@@ -5,9 +5,7 @@ const toggleNavMobile = () => {
   // console.log(iconMenu);
   iconMenu.setAttribute(
     "class",
-    navMobile.classList.contains("mobile")
-      ? "fas fa-plane-slash"
-      : "fas fa-plane"
+    navMobile.classList.contains("mobile") ? "fas fa-x" : "fas fa-bars"
   );
 };
 
