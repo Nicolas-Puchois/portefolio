@@ -1,7 +1,8 @@
 header {
   z-index: 20;
-  //   position: fixed;
+  position: fixed;
   width: 100%;
+  min-height: 10px;
   & nav {
     max-width: 1280px;
     display: flex;

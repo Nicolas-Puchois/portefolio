@@ -22,15 +22,27 @@
 html {
   height: 100vh;
 }
-
+textarea {
+  resize: none;
+}
 html,
 button {
   font-family: "Poppins", sans-serif;
 }
+
+body {
+  line-height: 1.6;
+}
+
+section {
+  margin: 32px 0; // Ajoute de l'espace vertical entre les sections
+}
+
 h1,
 h2,
 h3 {
   font-family: "Roboto Bold", sans-serif;
+  margin-bottom: 16px;
 }
 h1 {
   font-size: 28px;
@@ -38,7 +50,6 @@ h1 {
 }
 * {
   scroll-behavior: smooth;
-  margin: 8px;
 }
 img {
   max-width: 100%;
@@ -86,6 +97,7 @@ a.active:not(#logo a):not(#reseaux-mobile a):not(#reseaux a):after {
 }
 main {
   // position: relative;
+  padding-top: 30px;
   margin: auto;
   max-width: 1024px;
 }

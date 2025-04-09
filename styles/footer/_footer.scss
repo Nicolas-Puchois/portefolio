@@ -1,0 +1,20 @@
+footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  min-height: 100%;
+}
+
+html[data-theme="light"] {
+  footer {
+    background-color: $bg-color-light;
+    color: $bg-color-dark;
+  }
+}
+
+html[data-theme="dark"] {
+  footer {
+    background-color: $bg-color-dark;
+    color: $bg-color-light;
+  }
+}

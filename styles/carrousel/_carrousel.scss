@@ -1,0 +1,190 @@
+// INFO: partie ordinateur du carrousel
+html {
+  & main {
+    & #projets {
+      #carrousel-control {
+        position: absolute; // Positionne les flèches par rapport au conteneur parent
+        top: 50%;
+        left: 0;
+        width: 100%; // Étend le conteneur des flèches sur toute la largeur
+        height: 100%; // Étend le conteneur des flèches sur toute la hauteur
+        display: flex;
+        justify-content: space-between; // Place les flèches aux extrémités
+        align-items: center;
+
+        #prev,
+        #next {
+          position: relative;
+          top: 50%; // Centre verticalement
+          transform: translateY(-50%);
+          font-size: 2rem; // Taille des flèches
+          cursor: pointer;
+          background-color: rgba(0, 0, 0, 0.5); // Fond semi-transparent
+          color: #fff; // Couleur des flèches
+          border: none;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        #prev {
+          left: -20px; // Positionne la flèche à gauche de la première carte
+        }
+
+        #next {
+          right: -20px; // Positionne la flèche à droite de la dernière carte
+        }
+      }
+      & #card-container {
+        position: relative;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px; // Espace entre les cartes
+        justify-content: center;
+        align-items: center;
+        .card {
+          display: grid;
+          grid-template-areas:
+            "projet-name projet-name"
+            "projet-desc projet-desc"
+            "projet-img projet-link"; // Sépare l'image et les liens
+          grid-template-columns: 1fr 1fr; // Deux colonnes
+          grid-template-rows: auto auto auto; // Trois lignes
+          gap: 8px;
+          padding: 16px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          max-width: 400px;
+          width: 100%;
+          background-color: #fff;
+
+          .text {
+            grid-area: projet-name; // Associe le texte à la zone projet-name et projet-desc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            h3 {
+              grid-area: projet-name;
+              font-size: 1.5rem;
+              margin: 0;
+              color: $text-color-light;
+            }
+            p {
+              grid-area: projet-desc;
+              font-size: 1rem;
+              color: #666;
+            }
+          }
+
+          .media {
+            grid-area: projet-img; // Associe uniquement l'image à la zone projet-img
+            display: flex;
+            align-items: center;
+
+            img {
+              width: 100%;
+              max-width: 150px;
+              height: auto;
+              object-fit: cover;
+              border-radius: 4px;
+            }
+          }
+
+          .liens {
+            grid-area: projet-link; // Associe les liens à la zone projet-link
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            a {
+              text-decoration: none;
+              color: #0077df;
+              font-size: 0.9rem;
+              transition: color 0.3s;
+
+              &:hover {
+                color: #005bb5;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// INFO: partie tablette des boutons
+@media only screen and (max-width: 1000px) {
+  html {
+    main {
+      #projets {
+        #card-container {
+          & #carrousel-control {
+            display: flex;
+            justify-content: center; // Centre les flèches horizontalement
+            gap: 16px; // Ajoute un espace entre les flèches
+            margin-top: 16px; // Ajoute un espace entre la carte et les flèches
+            padding: 0 16px; // Ajoute un padding pour éviter que les flèches touchent les bords
+
+            #prev,
+            #next {
+              position: relative; // Position relative pour éviter qu'elles sortent des bords
+              font-size: 1.5rem;
+              cursor: pointer;
+              background-color: rgba(0, 0, 0, 0.5);
+              color: #fff;
+              border: none;
+              border-radius: 50%;
+              width: 40px;
+              height: 40px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// INFO: partie tablette et mobile du carrousel
+@media only screen and (max-width: 900px) {
+  html {
+    & main {
+      #projets {
+        #card-container {
+          & .card:nth-child(1) {
+            display: grid;
+            grid-template-areas:
+              "projet-name"
+              "projet-desc"
+              "projet-link"; // Supprime la zone de l'image
+            grid-template-columns: 1fr; // Une seule colonne
+            text-align: center;
+          }
+          .card {
+            display: none;
+
+            .media {
+              img {
+                display: none; // Cache l'image
+              }
+            }
+
+            .liens {
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
