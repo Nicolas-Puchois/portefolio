@@ -7,7 +7,7 @@ html {
         top: 50%;
         left: 0;
         width: 100%; // Étend le conteneur des flèches sur toute la largeur
-        height: 100%; // Étend le conteneur des flèches sur toute la hauteur
+        // height: 100%; // Étend le conteneur des flèches sur toute la hauteur
         display: flex;
         justify-content: space-between; // Place les flèches aux extrémités
         align-items: center;
@@ -47,6 +47,7 @@ html {
         justify-content: center;
         align-items: center;
         .card {
+          z-index: 10; // Assure que les cartes sont au-dessus des flèches
           display: grid;
           grid-template-areas:
             "projet-name projet-name"
@@ -121,25 +122,25 @@ html {
 }
 
 // INFO: partie tablette des boutons
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1100px) {
   html {
     main {
       #projets {
         #card-container {
-          & #carrousel-control {
+          #carrousel-control {
+            position: relative; // Position relative pour être sous la carte
+            margin-top: 16px; // Ajoute un espace entre la carte et les flèches
             display: flex;
             justify-content: center; // Centre les flèches horizontalement
             gap: 16px; // Ajoute un espace entre les flèches
-            margin-top: 16px; // Ajoute un espace entre la carte et les flèches
-            padding: 0 16px; // Ajoute un padding pour éviter que les flèches touchent les bords
 
             #prev,
             #next {
-              position: relative; // Position relative pour éviter qu'elles sortent des bords
-              font-size: 1.5rem;
+              position: relative; // Position relative pour éviter qu'elles soient sur la carte
+              font-size: 1.5rem; // Taille des flèches
               cursor: pointer;
-              background-color: rgba(0, 0, 0, 0.5);
-              color: #fff;
+              background-color: rgba(0, 0, 0, 0.5); // Fond semi-transparent
+              color: #fff; // Couleur des flèches
               border: none;
               border-radius: 50%;
               width: 40px;
