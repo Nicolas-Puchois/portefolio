@@ -10,11 +10,19 @@ html[data-theme="light"] {
     background-color: $bg-color-light;
     color: $bg-color-dark;
   }
+  #arrow-up {
+    background-color: $bg-color-dark;
+    color: $text-color-light;
+  }
 }
 
 html[data-theme="dark"] {
   footer {
     background-color: $bg-color-dark;
     color: $bg-color-light;
+  }
+  #arrow-up {
+    background-color: $bg-color-light;
+    color: $text-color-dark;
   }
 }
