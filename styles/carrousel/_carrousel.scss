@@ -2,118 +2,114 @@
 html {
   & main {
     & #projets {
-      #carrousel-control {
-        position: absolute; // Positionne les flèches par rapport au conteneur parent
-        top: 50%;
-        left: 0;
-        width: 100%; // Étend le conteneur des flèches sur toute la largeur
-        // height: 100%; // Étend le conteneur des flèches sur toute la hauteur
-        display: flex;
-        justify-content: space-between; // Place les flèches aux extrémités
-        align-items: center;
-
-        #prev,
-        #next {
-          position: relative;
-          top: 50%; // Centre verticalement
-          transform: translateY(-50%);
-          font-size: 2rem; // Taille des flèches
-          cursor: pointer;
-          background-color: rgba(0, 0, 0, 0.5); // Fond semi-transparent
-          color: #fff; // Couleur des flèches
-          border: none;
-          border-radius: 50%;
-          width: 40px;
-          height: 40px;
+      & #carousel {
+        position: relative; // Définit une position relative pour les flèches
+        width: 100%; // Assure que le carrousel occupe toute la largeur
+        overflow: hidden; // Cache les cartes qui débordent
+        margin: 0 auto; // Centre le carrousel horizontalement
+        & #card-container {
           display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        #prev {
-          left: -20px; // Positionne la flèche à gauche de la première carte
-        }
-
-        #next {
-          right: -20px; // Positionne la flèche à droite de la dernière carte
-        }
-      }
-      & #card-container {
-        position: relative;
-
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px; // Espace entre les cartes
-        justify-content: center;
-        align-items: center;
-        .card {
-          z-index: 10; // Assure que les cartes sont au-dessus des flèches
-          display: grid;
-          grid-template-areas:
-            "projet-name projet-name"
-            "projet-desc projet-desc"
-            "projet-img projet-link"; // Sépare l'image et les liens
-          grid-template-columns: 1fr 1fr; // Deux colonnes
-          grid-template-rows: auto auto auto; // Trois lignes
-          gap: 8px;
-          padding: 16px;
-          border: 1px solid #ddd;
-          border-radius: 8px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          max-width: 400px;
+          transition: transform 0.5s ease-in-out;
           width: 100%;
-          background-color: #fff;
+          // justify-content: center;
 
-          .text {
-            grid-area: projet-name; // Associe le texte à la zone projet-name et projet-desc;
+          .card {
+            z-index: 10;
+            flex: 0 0 50%; // Chaque carte occupe 50% de la largeur
+            width: 480px;
+            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            h3 {
-              grid-area: projet-name;
-              font-size: 1.5rem;
-              margin: 0;
-              color: $text-color-light;
-            }
-            p {
-              grid-area: projet-desc;
-              font-size: 1rem;
-              color: #666;
-            }
-          }
-
-          .media {
-            grid-area: projet-img; // Associe uniquement l'image à la zone projet-img
-            display: flex;
-            align-items: center;
-
-            img {
-              width: 100%;
-              max-width: 150px;
-              height: auto;
-              object-fit: cover;
-              border-radius: 4px;
-            }
-          }
-
-          .liens {
-            grid-area: projet-link; // Associe les liens à la zone projet-link
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-
-            a {
-              text-decoration: none;
-              color: #0077df;
-              font-size: 0.9rem;
-              transition: color 0.3s;
-
-              &:hover {
-                color: #005bb5;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            .text {
+              grid-area: projet-name; // Associe le texte à la zone projet-name et projet-desc;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              h3 {
+                grid-area: projet-name;
+                font-size: 1.5rem;
+                margin: 0;
+                color: $text-color-light;
+              }
+              p {
+                grid-area: projet-desc;
+                font-size: 1rem;
+                color: #666;
               }
             }
+
+            .media {
+              grid-area: projet-img; // Associe uniquement l'image à la zone projet-img
+              display: flex;
+              align-items: center;
+
+              img {
+                width: 100%;
+                max-width: 150px;
+                height: auto;
+                object-fit: cover;
+                border-radius: 4px;
+              }
+            }
+
+            .liens {
+              grid-area: projet-link; // Associe les liens à la zone projet-link
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+
+              a {
+                text-decoration: none;
+                color: $text-color-light;
+                font-size: 0.9rem;
+                transition: color 0.3s;
+
+                &:hover {
+                  color: #005bb5;
+                }
+              }
+            }
+          }
+        }
+        #carrousel-control {
+          position: absolute;
+          width: 100%;
+          display: flex;
+          justify-content: space-between; // Place les flèches aux extrémités
+          align-items: center;
+          top: 50%; // Centre verticalement en desktop
+          transform: translateY(-50%);
+
+          #prev,
+          #next {
+            font-size: 2rem; // Taille des flèches
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5); // Fond semi-transparent
+            color: #fff; // Couleur des flèches
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // position: absolute;
+          }
+          #prev {
+            left: -50px; // Positionne la flèche à gauche, en dehors des cartes
+          }
+
+          #next {
+            right: -50px; // Positionne la flèche à droite, en dehors des cartes
           }
         }
       }
@@ -122,32 +118,16 @@ html {
 }
 
 // INFO: partie tablette des boutons
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 900px) {
   html {
     main {
       #projets {
-        #card-container {
-          #carrousel-control {
-            position: relative; // Position relative pour être sous la carte
-            margin-top: 16px; // Ajoute un espace entre la carte et les flèches
-            display: flex;
-            justify-content: center; // Centre les flèches horizontalement
-            gap: 16px; // Ajoute un espace entre les flèches
-
-            #prev,
-            #next {
-              position: relative; // Position relative pour éviter qu'elles soient sur la carte
-              font-size: 1.5rem; // Taille des flèches
-              cursor: pointer;
-              background-color: rgba(0, 0, 0, 0.5); // Fond semi-transparent
-              color: #fff; // Couleur des flèches
-              border: none;
-              border-radius: 50%;
-              width: 40px;
-              height: 40px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+        #carousel {
+          #card-container {
+            .card {
+              flex: 0 0 80%; // Réduit la largeur de la carte à 80% de l'écran
+              max-width: 80%; // Limite la largeur maximale à 80%
+              margin: 0 auto; // Centre la carte horizontalement
             }
           }
         }
@@ -161,27 +141,36 @@ html {
   html {
     & main {
       #projets {
-        #card-container {
-          & .card:nth-child(1) {
-            display: grid;
-            grid-template-areas:
-              "projet-name"
-              "projet-desc"
-              "projet-link"; // Supprime la zone de l'image
-            grid-template-columns: 1fr; // Une seule colonne
-            text-align: center;
-          }
-          .card {
-            display: none;
+        & #carousel {
+          #carrousel-control {
+            top: 50%; // Centre verticalement les flèches
+            transform: translateY(-50%); // Ajuste le positionnement vertical
+            justify-content: space-between; // Place les flèches aux extrémités
 
-            .media {
-              img {
-                display: none; // Cache l'image
-              }
+            #prev {
+              left: -20px; // Positionne la flèche à gauche, légèrement en dehors de la carte
             }
 
-            .liens {
-              justify-content: center;
+            #next {
+              right: -20px; // Positionne la flèche à droite, légèrement en dehors de la carte
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    & main {
+      #projets {
+        & #carousel {
+          & .card {
+            & .media {
+              & img {
+                display: none;
+              }
             }
           }
         }

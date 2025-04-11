@@ -65,41 +65,18 @@
         <div class="titre">
           <h2>Mes projets</h2>
         </div>
-        <!-- INFO: container des cartes-->
-        <div id="card-container">
-          <!-- INFO: carte 1 -->
-          <div class="card">
-            <div class="text">
-              <h3>projet Portefolio</h3>
-              <p> Création d'un Portefolio</p>
-            </div>
-            <div class="media">
-              <img src="<%= process.env.SITE_URL %>/images/photo-card-portefolio.jpg" alt="photo du site dans l'état fini" />
-
-            </div>
-            <div class="liens">
-              <a href="https://" target="_blank">Github du projet</a>
-              <a href=" https://" target="_blank">Site du projet</a>
-            </div>
-          </div>
-          <!-- INFO: carte 2 -->
-          <div class="card">
-            <div class="text">
-              <h3>projet Portefolio</h3>
-              <p> Création d'un Portefolio</p>
-            </div>
-            <div class="media"><img src="<%= process.env.SITE_URL %>/images/photo-card-portefolio.jpg" alt="photo du site dans l'état fini">
-            </div>
-            <div class="liens">
-              <a href="https://github.com" class="lien-card"> github du projet</a>
-              <a href="" class="lien-card"> site du projet</a>
-            </div>
-          </div>
+        <div id="carousel">
+          <div id="card-container"></div>
           <div id="carrousel-control">
             <button id="prev">&#10094;</button>
             <button id="next">&#10095;</button>
           </div>
         </div>
+        <!-- INFO: container des cartes-->
+
+
+
+
       </section>
       <!-- INFO: formulaire de contact-->
       <section id="contact">
