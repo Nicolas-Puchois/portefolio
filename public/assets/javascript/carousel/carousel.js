@@ -71,7 +71,7 @@ window.addEventListener("DOMContentLoaded", () => {
   createCarrousel(projets);
 
   const slides = container.children; // HTMLCollection dynamique
-  const totalSlides = projets.length;
+  const totalSlides = projets.length + 2 * cardsVisible; // Total des cartes (y compris les clones)
 
   // Ajuste la largeur des cartes
   Array.from(slides).forEach((slide) => {
@@ -93,30 +93,47 @@ window.addEventListener("DOMContentLoaded", () => {
 
   showSlide(currentIndex); // Affiche la première carte
 
+  // Fonction pour réinitialiser la position sans transition
+  function resetPosition(index) {
+    container.style.transition = "none";
+    container.style.transform = `translateX(-${index * (100 / cardsVisible)}%)`;
+  }
+
   // Gère le clic sur "Précédent"
   prevButton.addEventListener("click", () => {
     currentIndex -= 1;
-    if (currentIndex < 0) {
-      currentIndex = totalSlides - cardsVisible;
-    }
     showSlide(currentIndex);
+
+    // Si on atteint les clones au début
+    if (currentIndex < cardsVisible) {
+      setTimeout(() => {
+        currentIndex = totalSlides - 2 * cardsVisible;
+        resetPosition(currentIndex);
+      }, 500); // Durée de la transition
+    }
   });
 
   // Gère le clic sur "Suivant"
   nextButton.addEventListener("click", () => {
     currentIndex += 1;
-    if (currentIndex >= totalSlides) {
-      currentIndex = 0;
-    }
     showSlide(currentIndex);
+
+    // Si on atteint les clones à la fin
+    if (currentIndex >= totalSlides - cardsVisible) {
+      setTimeout(() => {
+        currentIndex = cardsVisible;
+        resetPosition(currentIndex);
+      }, 500); // Durée de la transition
+    }
   });
 
   window.addEventListener("resize", () => {
-    cardsVisible = window.innerWidth <= 900 ? 1 : 2;
+    cardsVisible;
     currentIndex = 0; // Réinitialise l'index
     Array.from(slides).forEach((slide) => {
       slide.style.flex = `0 0 ${100 / cardsVisible}%`;
     });
+    currentIndex = cardsVisible; // Réinitialise l'index
     showSlide(currentIndex);
   });
 });
