@@ -18,16 +18,10 @@ function posX() {
 function scrollToTop() {
   const scrollToTopButton = document.querySelector("#up-arrow");
   const heroHeader = document.querySelector("#hero-header");
-  //   console.log(heroHeader);
-  //   console.log(heroHeader.offsetHeight);
 
   window.addEventListener("scroll", () => {
     const height = heroHeader ? heroHeader.offsetHeight : 200;
-    if (scrollY >= height) {
-      scrollToTopButton.style.display = "block";
-    } else if (scrollY == 0) {
-      scrollToTopButton.style.display = "none";
-    }
+    scrollToTopButton.style.display = scrollY >= height ? "block" : "none";
   });
 
   scrollToTopButton.addEventListener("click", () => window.scrollTo(0, 0));

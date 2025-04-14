@@ -2,7 +2,6 @@ footer {
   display: flex;
   justify-content: center;
   padding-top: 8px;
-  min-height: 100%;
 }
 
 html[data-theme="light"] {
@@ -24,5 +23,13 @@ html[data-theme="dark"] {
   #arrow-up {
     background-color: $bg-color-light;
     color: $text-color-dark;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    footer {
+      padding-top: 10px;
+    }
   }
 }

@@ -1,11 +1,5 @@
 // We listen to the resize event
 
-function calcViewportHeight() {
-  // We execute the same script as before
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-}
-
 function calcBodyPadding() {
   const reseauxMobile = document.querySelector("#reseaux-mobile");
   const header = document.querySelector("header");

@@ -7,7 +7,6 @@
     const systemPrefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches; // true || false
-    // console.log(systemPrefersDark);
     const theme = storedTheme || (systemPrefersDark ? "dark" : "light");
     root.setAttribute("data-theme", theme);
     togglerThemes.forEach((toggler) => {
@@ -27,7 +26,6 @@
     const newTheme = currentTheme === "dark" ? "light" : "dark";
     localStorage.setItem("theme", newTheme);
     root.setAttribute("data-theme", newTheme);
-    // console.log(toggler);
     updateToggleButton(toggler, newTheme);
   }
 

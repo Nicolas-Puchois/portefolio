@@ -11,7 +11,6 @@ html {
           display: flex;
           transition: transform 0.5s ease-in-out;
           width: 100%;
-          // justify-content: center;
 
           .card {
             z-index: 10;
@@ -102,7 +101,6 @@ html {
             display: flex;
             justify-content: center;
             align-items: center;
-            // position: absolute;
           }
           #prev {
             left: -50px; // Positionne la flèche à gauche, en dehors des cartes
@@ -110,25 +108,6 @@ html {
 
           #next {
             right: -50px; // Positionne la flèche à droite, en dehors des cartes
-          }
-        }
-      }
-    }
-  }
-}
-
-// INFO: partie tablette des boutons
-@media only screen and (max-width: 600px) {
-  html {
-    main {
-      #projets {
-        #carousel {
-          #card-container {
-            .card {
-              flex: 0 0 100%; // Réduit la largeur de la carte à 80% de l'écran
-              max-width: 100%; // Limite la largeur maximale à 80%
-              margin: 0; // Centre la carte horizontalement
-            }
           }
         }
       }

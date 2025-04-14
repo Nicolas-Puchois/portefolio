@@ -54,7 +54,6 @@ header {
         max-width: 200px;
         min-height: 50vh;
         border-radius: 8px;
-        height: calc(var(--vh, 1vh) * 10);
         & ul {
           flex-direction: column;
           width: fit-content;

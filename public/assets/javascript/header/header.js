@@ -2,7 +2,6 @@ const toggleNavMobile = () => {
   let navMobile = document.querySelector("nav > #nav");
   let iconMenu = document.querySelector("nav > #toggle-nav");
   navMobile.classList.toggle("mobile");
-  // console.log(iconMenu);
   iconMenu.setAttribute(
     "class",
     navMobile.classList.contains("mobile") ? "fas fa-x" : "fas fa-bars"

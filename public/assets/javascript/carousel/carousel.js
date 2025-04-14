@@ -128,7 +128,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   window.addEventListener("resize", () => {
-    cardsVisible;
     currentIndex = 0; // Réinitialise l'index
     Array.from(slides).forEach((slide) => {
       slide.style.flex = `0 0 ${100 / cardsVisible}%`;

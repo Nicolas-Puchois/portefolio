@@ -8,7 +8,6 @@
 export async function fetchData({ route, api = apiUrl, options = {} }) {
   // Préparation de l'entête 'headers' avec les clés - valeurs nécessaire pour l'appel [ Authorization: 'Bearer qs4dz68a4qz']
   const headers = { Accept: "application/json", ...options.headers };
-  // console.log(headers);
   //  appel methode native fetch [ appels API]
   let queryString = "";
   if (options.params) {

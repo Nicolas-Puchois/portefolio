@@ -67,8 +67,6 @@ html {
         & #competence {
           & ul {
             display: grid;
-            // flex-direction: row;
-            // justify-content: space-evenly;
             grid-template-columns: repeat(2, 1fr); // Deux colonnes
             gap: 16px; // Espace entre les éléments
             & li {
