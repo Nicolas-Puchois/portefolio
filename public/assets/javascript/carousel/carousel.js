@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const prevButton = document.querySelector("#prev");
   const nextButton = document.querySelector("#next");
 
-  let cardsVisible = window.innerWidth <= 900 ? 1 : 2; // 1 carte en mobile, 2 en desktop
+  let cardsVisible = window.innerWidth <= 600 ? 1 : 2; // 1 carte en mobile, 2 en desktop
   let currentIndex = 0;
 
   // INFO Crée les cartes
