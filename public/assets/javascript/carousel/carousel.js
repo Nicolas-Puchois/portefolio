@@ -3,28 +3,28 @@ window.addEventListener("DOMContentLoaded", () => {
     {
       nom: "Projet 1",
       description: "Description du projet 1",
-      image: "../../images/photo-card-portefolio.jpg",
+      image: "../../images/photo-card-portefolio.webp",
       github: "https://github.com/projet1",
       demo: "https://live-demo1.com",
     },
     {
       nom: "Projet 2",
       description: "Description du projet 2",
-      image: "../../images/photo-card-portefolio.jpg",
+      image: "../../images/photo-card-portefolio.webp",
       github: "https://github.com/projet2",
       demo: "https://live-demo2.com",
     },
     {
       nom: "Projet 3",
       description: "Description du projet 3",
-      image: "../../images/photo-card-portefolio.jpg",
+      image: "../../images/photo-card-portefolio.webp",
       github: "https://github.com/projet3",
       demo: "https://live-demo3.com",
     },
     {
       nom: "Projet 4",
       description: "Description du projet 4",
-      image: "../../images/photo-card-portefolio.jpg",
+      image: "../../images/photo-card-portefolio.webp",
       github: "https://github.com/projet3",
       demo: "https://live-demo3.com",
     },
@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let cardsVisible = window.innerWidth <= 900 ? 1 : 2; // 1 carte en mobile, 2 en desktop
   let currentIndex = 0;
 
-  // Crée les cartes
+  // INFO Crée les cartes
   function createCarrousel(projets) {
     projets.forEach((projet) => {
       const card = document.createElement("div");
@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", () => {
       container.appendChild(card);
     });
 
-    // Clone les premières et dernières cartes pour l'effet de boucle infinie
+    // INFO Clone les premières et dernières cartes pour l'effet de boucle infinie
     for (let i = 0; i < cardsVisible; i++) {
       const firstClone = container.children[i].cloneNode(true);
       const lastClone =
@@ -68,15 +68,16 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // INFO appel de la fonction
   createCarrousel(projets);
 
   const slides = container.children; // HTMLCollection dynamique
   const totalSlides = projets.length + 2 * cardsVisible; // Total des cartes (y compris les clones)
 
   // Ajuste la largeur des cartes
-  Array.from(slides).forEach((slide) => {
-    slide.style.flex = `0 0 ${100 / cardsVisible}%`; // Chaque carte occupe une fraction de l'espace
-  });
+  // Array.from(slides).forEach((slide) => {
+  //   slide.style.flex = `0 0 ${100 / cardsVisible}%`; // Chaque carte occupe une fraction de l'espace
+  // });
 
   // Position initiale
   currentIndex = cardsVisible; // Commence après les clones au début
@@ -127,6 +128,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // INFO affichage d'une seul carte en mode mobile
   window.addEventListener("resize", () => {
     currentIndex = 0; // Réinitialise l'index
     Array.from(slides).forEach((slide) => {

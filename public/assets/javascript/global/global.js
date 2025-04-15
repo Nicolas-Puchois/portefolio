@@ -26,10 +26,8 @@ function calcBodyPadding() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  calcViewportHeight();
   calcBodyPadding();
 });
 window.addEventListener("resize", () => {
-  calcViewportHeight();
   calcBodyPadding();
 });
